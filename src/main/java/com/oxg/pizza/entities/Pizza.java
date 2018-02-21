@@ -1,9 +1,11 @@
 package com.oxg.pizza.entities;
 
+import java.util.Arrays;
+
 import com.oxg.pizza.entities.MenuItem;
 
 public class Pizza extends MenuItem {
-	private String[] topings = new String[10];
+	private String[] toppings = new String[10];
 	private int idex = 0;
 	
 	public Pizza() {
@@ -11,10 +13,10 @@ public class Pizza extends MenuItem {
 	}
 	
 	public String[] getTopings() {
-		return topings;
+		return toppings;
 	}
 	public void addTopings(String toping) {
-		topings[idex] = toping;
+		toppings[idex] = toping;
 		idex++;
 	}
 
@@ -22,21 +24,25 @@ public class Pizza extends MenuItem {
 		String[] temp = new String[10];
 		int k = 0;
 		for(int i=0; i < idex; i++,  k++) {
-			if (topings[i].equals(toping)) {
+			if (toppings[i].equals(toping)) {
 				k--;
 			} else
-				temp[k] = topings[i];
+				temp[k] = toppings[i];
 				
 		};
-		topings = temp;
+		toppings = temp;
 		idex = k;
 	}
 
+	public int getNumberOfToppings() {
+		return idex;
+	}
+	
 	public void printTopings() {
 		System.out.println("List of toppings");
 		for(int i= 0; i < idex; i++) {
-			System.out.println("Toppings: " + topings[i]);
+			System.out.println("Toppings: " + toppings[i]);
 		};
 	}
-	
+
 }

@@ -8,10 +8,13 @@ import com.oxg.pizza.entities.MenuItem;
 
 public class Order {
 	private Map<Integer,MenuItem> items = new HashMap<Integer,MenuItem>();
-
 	private int orderNum = 0;
 	private int orderItems = 0;
 	
+	public Order() {
+		super();
+	}
+
 	public int crateOrder(MenuItem newItem) {
 		if (newItem != null) {
 			items.put(orderItems, newItem);
@@ -45,8 +48,12 @@ public class Order {
 
 	public void removeItem(int lineItem) {
 		items.remove(lineItem);
+		orderItems --;
 	}
 
+	public int getOrderItems() {
+		return orderItems + 1;
+	}
 	
 	public void dumpData() {
 		System.out.println("Order orderNum= [" + orderNum + " ]");
@@ -59,6 +66,12 @@ public class Order {
 	@Override
 	public String toString() {
 		return "Order [items=" + items + ", orderNum=" + orderNum + "]";
+	}
+	
+	public void clear() {
+		items.clear();
+		orderNum = 0;
+		orderItems = 0;
 	}
 	
 	

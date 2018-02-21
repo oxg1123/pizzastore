@@ -6,7 +6,9 @@ public class MenuItem {
 	private String description;
 
 	
-	
+	public MenuItem() {
+		super();
+	}
 	public String getName() {
 		return name;
 	}
