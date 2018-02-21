@@ -1,7 +1,5 @@
 package com.oxg.pizza.entities;
 
-import java.util.Arrays;
-
 import com.oxg.pizza.entities.MenuItem;
 
 public class Pizza extends MenuItem {

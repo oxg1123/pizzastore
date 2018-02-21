@@ -1,6 +1,5 @@
 package com.oxg.pizza;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
@@ -9,8 +8,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import com.oxg.pizza.entities.MenuItem;
 import com.oxg.pizza.entities.Order;
 import com.oxg.pizza.entities.Pizza;
 
@@ -30,14 +27,7 @@ public class PizzaStoreEntitiesTests {
 	   order.clear();
    }
    
- 	private MenuItem createItem(String name, String descritpion) {
-		MenuItem newItem = new MenuItem();
-		newItem.setName(name);
-		newItem.setDescription(descritpion);
-		return newItem;
-		
-	}
-	
+ 
 	private Pizza createPizza(String name, String descritpion) {
 		Pizza newItem = new Pizza();
 		newItem.setName(name);
