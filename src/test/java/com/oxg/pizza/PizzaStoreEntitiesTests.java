@@ -20,11 +20,8 @@ public class PizzaStoreEntitiesTests {
    private Order order;
    
    
-   
-   
    @Before
    public void setup() {
-	   order.clear();
    }
    
  

@@ -17,17 +17,19 @@ public class Order {
 
 	public int crateOrder(MenuItem newItem) {
 		if (newItem != null) {
-			items.put(orderItems, newItem);
 			orderNum =  new Random().nextInt(100);
+			addItem(newItem);
 		};
 		return orderNum;
 	}
 	
-	public void addItem(MenuItem newItem) {
+	public int addItem(MenuItem newItem) {
 		if (newItem != null) {
-			orderItems++;
 			items.put(orderItems, newItem);
-		}
+			orderItems++;
+			return orderItems;
+		} else
+			return 0;
 	}
 	
 	public MenuItem getLineItem(int lineItem) {
